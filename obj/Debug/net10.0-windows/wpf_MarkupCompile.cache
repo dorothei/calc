@@ -1,5 +1,5 @@
 ﻿wpf
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_O
 C:\Users\jfino\OneDrive\Desktop\wpf\App.xaml
 11407045341
 
-6-635946147
-206702017258
+4-1801068930
+211-1568117609
 MainWindow.xaml;
 
-True
+False
 

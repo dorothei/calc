@@ -7,5 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="AngouriMath" Version="2.5.0" />
+  </ItemGroup>
 
 </Project>

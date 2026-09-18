@@ -1,10 +1,11 @@
-﻿using System.Data;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-
+using AngouriMath;
+using System.Globalization;
 
 namespace wpf;
+
 public partial class MainWindow : Window
 {
     public MainWindow()
@@ -14,6 +15,10 @@ public partial class MainWindow : Window
 
     public void NumberButtonClick(object sender, EventArgs e)
     {
+        if (TextBox.Text == "Error")
+        {
+           TextBox.Text = "";
+        }
         if (sender is Button button)
         {
             string number = button.Content.ToString()!;
@@ -28,14 +33,19 @@ public partial class MainWindow : Window
 
     public void SolutionButtonClick(object sender, EventArgs e)
     {
-        try
+        if (!string.IsNullOrWhiteSpace(TextBox.Text))
         {
-            var result = new DataTable().Compute(TextBox.Text.Pow().Replace(",", "."), null);
-            TextBox.Text = result.ToString();
-        }
-        catch
-        {
-            TextBox.Text = "Error";
+            try
+            {
+                var expression = MathS.FromString(TextBox.Text);
+                var numeric = expression.EvalNumerical();
+                double value = (double)numeric;
+                TextBox.Text = value.ToString("0.##########", CultureInfo.InvariantCulture);
+            }
+            catch (Exception)
+            {
+                TextBox.Text = "Error";
+            }
         }
     }
 
@@ -49,20 +59,27 @@ public partial class MainWindow : Window
 
     public void WindowKeyDown(object sender, KeyEventArgs e)
     {
+        if (TextBox.Text == "Error")
+        {
+           TextBox.Text = "";
+        }
         if (e.Key == Key.Back)
         {
             DeleteButtonClick(sender, e);
             e.Handled = true;
+            return;
         }
-        if (e.Key == Key.Enter)
+        else if (e.Key == Key.Enter)
         {
             SolutionButtonClick(sender, e);
             e.Handled = true;
+            return;
         }
-        if (e.Key == Key.C)
+        else if (e.Key == Key.C)
         {
             ClearButtonClick(sender, e);
             e.Handled = true;
+            return;
         }
         TextBox.Text += e.Key switch
         {
@@ -74,29 +91,16 @@ public partial class MainWindow : Window
             Key.D6 or Key.NumPad6 => Keyboard.Modifiers == ModifierKeys.Shift ? "^" : "6",
             Key.D7 or Key.NumPad7 => "7",
             Key.D8 or Key.NumPad8 => Keyboard.Modifiers == ModifierKeys.Shift ? "*" : "8",
-            Key.D9 or Key.NumPad9 => "9",
-            Key.D0 or Key.NumPad0 => "0",
-            Key.OemComma => ",",
+            Key.D9 or Key.NumPad9 => Keyboard.Modifiers == ModifierKeys.Shift ? "(" : "9",
+            Key.D0 or Key.NumPad0 => Keyboard.Modifiers == ModifierKeys.Shift ? ")" : "0",
+            Key.OemComma or Key.OemPeriod => ".",
             Key.OemPlus or Key.Add => "+",
             Key.OemMinus or Key.Subtract => "-",
             Key.Multiply => "*",
             Key.Divide or Key.OemQuestion => "/",
-            _ => ""
+            Key.OemOpenBrackets => "(",
+            Key.OemCloseBrackets => ")",
+            _ => null,
         };
-    }
-}
-
-public static class UtilityMethods
-{
-    public static string Pow(this string textBox)
-    {
-        while (textBox.Contains('^'))
-        {
-            int caretIndex = textBox.IndexOf("^");
-            string leftPart = textBox.Substring(0, caretIndex);
-            string rightPart = textBox.Substring(caretIndex + 1);
-            return Math.Pow(double.Parse(leftPart), double.Parse(rightPart)).ToString();
-        }
-        return textBox;
     }
 }

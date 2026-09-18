@@ -11,19 +11,18 @@
 
     <DockPanel>
         <TextBox x:Name="TextBox"
-                 Text="{Binding CurrentInput, Mode=OneWay}"
                  DockPanel.Dock="Top"
                  Height="Auto"
-                 Margin="12,12,12,8"
+                 Margin="5,12,5,8"
                  Padding="10,0"
                  FontWeight="SemiBold"
                  IsReadOnly="True"
-                 Focusable="False"
-                 FontSize="32"
+                 Focusable="True"
+                 FontSize="27"
                  TextAlignment="Right"
                  VerticalAlignment="Center"/>
 
-        <Grid>
+        <Grid  KeyboardNavigation.TabNavigation="None">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -145,7 +144,7 @@
             <Button x:Name="PointButton"
                     Grid.Row="4"
                     Grid.Column="2"
-                    Content=","
+                    Content="."
                     Width="60"
                     Height="50"
                     FontSize="18"
