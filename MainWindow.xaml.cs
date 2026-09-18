@@ -17,7 +17,7 @@ public partial class MainWindow : Window
     {
         if (TextBox.Text == "Error")
         {
-           TextBox.Text = "";
+            TextBox.Text = "";
         }
         if (sender is Button button)
         {
@@ -51,6 +51,10 @@ public partial class MainWindow : Window
 
     public void DeleteButtonClick(object sender, EventArgs e)
     {
+        if (TextBox.Text == "Error")
+        {
+            TextBox.Text = "";
+        }
         if (!string.IsNullOrEmpty(TextBox.Text))
         {
             TextBox.Text = TextBox.Text.Remove(TextBox.Text.Length - 1);
@@ -61,7 +65,7 @@ public partial class MainWindow : Window
     {
         if (TextBox.Text == "Error")
         {
-           TextBox.Text = "";
+            TextBox.Text = "";
         }
         if (e.Key == Key.Back)
         {

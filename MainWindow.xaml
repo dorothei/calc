@@ -9,164 +9,168 @@
         KeyDown="WindowKeyDown"
         SizeToContent="WidthAndHeight">
 
-<Window.Resources>
-    <Style TargetType="Button">
-        <Setter Property="Width" Value="60"/>
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="FontSize" Value="18"/>
-        <Setter Property="Margin" Value="5"/>
-    </Style>
-</Window.Resources>
+        <Window.Resources>
+                <Style TargetType="Button">
+                        <Setter Property="Width"
+                                Value="60"/>
+                        <Setter Property="Height"
+                                Value="50"/>
+                        <Setter Property="FontSize"
+                                Value="18"/>
+                        <Setter Property="Margin"
+                                Value="5"/>
+                        <Setter Property="Focusable"
+                                Value="False"/>
+                </Style>
+        </Window.Resources>
 
-    <DockPanel>
-        <TextBox x:Name="TextBox"
-                 DockPanel.Dock="Top"
-                 Height="Auto"
-                 Margin="5,12,5,8"
-                 Padding="10,0"
-                 FontWeight="SemiBold"
-                 IsReadOnly="True"
-                 Focusable="True"
-                 FontSize="27"
-                 TextAlignment="Right"
-                 VerticalAlignment="Center"/>
+        <DockPanel>
+                <TextBox x:Name="TextBox"
+                         DockPanel.Dock="Top"
+                         Height="Auto"
+                         Margin="5,12,5,8"
+                         Padding="10,0"
+                         FontWeight="SemiBold"
+                         IsReadOnly="True"
+                         Focusable="True"
+                         FontSize="27"
+                         TextAlignment="Right"
+                         VerticalAlignment="Center"/>
 
-        <Grid  KeyboardNavigation.TabNavigation="None">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <!--789 кнопки-->
-            <Button x:Name="ButtonSeven"
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Content="7"
-                    Click="NumberButtonClick"/>
+                <Grid  KeyboardNavigation.TabNavigation="None">
+                        <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!--789 кнопки-->
+                        <Button x:Name="ButtonSeven"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Content="7"
+                                Click="NumberButtonClick"/>
 
-            <Button x:Name="ButtonEight"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Content="8"
-                    Click="NumberButtonClick"/>
+                        <Button x:Name="ButtonEight"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Content="8"
+                                Click="NumberButtonClick"/>
 
-            <Button x:Name="ButtonNine"
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    Content="9"
-                    Click="NumberButtonClick"/>
+                        <Button x:Name="ButtonNine"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Content="9"
+                                Click="NumberButtonClick"/>
 
-            <!--456 кнопки-->
-            <Button x:Name="ButtonFour"
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Content="4"
-                    Click="NumberButtonClick"/>
+                        <!--456 кнопки-->
+                        <Button x:Name="ButtonFour"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Content="4"
+                                Click="NumberButtonClick"/>
 
-            <Button x:Name="ButtonFive"
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Content="5"
-                    Click="NumberButtonClick"/>
+                        <Button x:Name="ButtonFive"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Content="5"
+                                Click="NumberButtonClick"/>
 
-            <Button x:Name="ButtonSix"
-                    Grid.Row="2"
-                    Grid.Column="2"
-                    Content="6"
-                    Click="NumberButtonClick"/>
-            <!--123 кнопки-->
-            <Button x:Name="ButtonOne"
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    Content="1"
-                    Click="NumberButtonClick"/>
+                        <Button x:Name="ButtonSix"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Content="6"
+                                Click="NumberButtonClick"/>
+                        <!--123 кнопки-->
+                        <Button x:Name="ButtonOne"
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Content="1"
+                                Click="NumberButtonClick"/>
 
-            <Button x:Name="ButtonTwo"
-                    Grid.Row="3"
-                    Grid.Column="1"
-                    Content="2"
-                    Click="NumberButtonClick"/>
+                        <Button x:Name="ButtonTwo"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Content="2"
+                                Click="NumberButtonClick"/>
 
-            <Button x:Name="ButtonThree"
-                    Grid.Row="3"
-                    Grid.Column="2"
-                    Content="3"
-                    Click="NumberButtonClick"/>
-            <!--Кнопки 0 +- ,  -->
-            <Button x:Name="ButtonZero"
-                    Grid.Row="4"
-                    Grid.Column="1"
-                    Content="0"
-                    Click="NumberButtonClick"/>
-            <Button x:Name="PointButton"
-                    Grid.Row="4"
-                    Grid.Column="2"
-                    Content="."
-                    Click="NumberButtonClick"/>
-            <!--Служебные кнопки-->
-            <Button x:Name="ButtonClear"
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Content="C"
-                    Click="ClearButtonClick"/>
-            <Button x:Name="DeleteButton"
-                    Grid.Row="0"
-                    Grid.Column="5"
-                    Content="⌫"
-                    Click="DeleteButtonClick"/>
-            <Button x:Name="SolutionButton"
-                    Grid.Row="4"
-                    Grid.Column="4"
-                    Content="="
-                    Click="SolutionButtonClick"/>
-            <!--Мат. знаки-->
-            <Button x:Name="PlusButton"
-                    Grid.Row="3"
-                    Grid.Column="4"
-                    Content="+"
-                    Click="NumberButtonClick"/>
-            <Button x:Name="MinusButton"
-                    Grid.Row="2"
-                    Grid.Column="4"
-                    Content="-"
-                    Click="NumberButtonClick"/>
-            <Button x:Name="PowButton"
-                    Grid.Row="4"
-                    Grid.Column="0"
-                    Content="^"
-                    Click="NumberButtonClick"/>
-            <Button x:Name="DivideButton"
-                    Grid.Row="0"
-                    Grid.Column="4"
-                    Content="/"
-                    Click="NumberButtonClick"/>
-            <Button x:Name="MultiplyButton"
-                    Grid.Row="1"
-                    Grid.Column="4"
-                    Content="*"
-                    Click="NumberButtonClick"/>
-            <Button x:Name="LeftBracketButton"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Content="("
-                    Click="NumberButtonClick"/>
-            <Button x:Name="RightBracketButton"
-                    Grid.Row="0"
-                    Grid.Column="2"
-                    Content=")"
-                    Click="NumberButtonClick"/>
-        </Grid>
-    </DockPanel>
+                        <Button x:Name="ButtonThree"
+                                Grid.Row="3"
+                                Grid.Column="2"
+                                Content="3"
+                                Click="NumberButtonClick"/>
+                        <!--Кнопки 0 +- ,  -->
+                        <Button x:Name="ButtonZero"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Content="0"
+                                Click="NumberButtonClick"/>
+                        <Button x:Name="PointButton"
+                                Grid.Row="4"
+                                Grid.Column="2"
+                                Content="."
+                                Click="NumberButtonClick"/>
+                        <!--Служебные кнопки-->
+                        <Button x:Name="ButtonClear"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Content="C"
+                                Click="ClearButtonClick"/>
+                        <Button x:Name="DeleteButton"
+                                Grid.Row="0"
+                                Grid.Column="5"
+                                Content="⌫"
+                                Click="DeleteButtonClick"/>
+                        <Button x:Name="SolutionButton"
+                                Grid.Row="4"
+                                Grid.Column="4"
+                                Content="="
+                                Click="SolutionButtonClick"/>
+                        <!--Мат. знаки-->
+                        <Button x:Name="PlusButton"
+                                Grid.Row="3"
+                                Grid.Column="4"
+                                Content="+"
+                                Click="NumberButtonClick"/>
+                        <Button x:Name="MinusButton"
+                                Grid.Row="2"
+                                Grid.Column="4"
+                                Content="-"
+                                Click="NumberButtonClick"/>
+                        <Button x:Name="PowButton"
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Content="^"
+                                Click="NumberButtonClick"/>
+                        <Button x:Name="DivideButton"
+                                Grid.Row="0"
+                                Grid.Column="4"
+                                Content="/"
+                                Click="NumberButtonClick"/>
+                        <Button x:Name="MultiplyButton"
+                                Grid.Row="1"
+                                Grid.Column="4"
+                                Content="*"
+                                Click="NumberButtonClick"/>
+                        <Button x:Name="LeftBracketButton"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Content="("
+                                Click="NumberButtonClick"/>
+                        <Button x:Name="RightBracketButton"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Content=")"
+                                Click="NumberButtonClick"/>
+                </Grid>
+        </DockPanel>
 </Window>
