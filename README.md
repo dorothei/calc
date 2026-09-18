@@ -5,3 +5,4 @@ Simple WPF calculator with keyboard input.
 Just input math problem from keyboard or buttons.
 
 
+[image=calcscreenshot.png][image]
