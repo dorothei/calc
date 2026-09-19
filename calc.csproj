@@ -4,6 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
+    <Version>1.1.0</Version>
+    <AssemblyTitle>Calc</AssemblyTitle>
+    <Product>Calc</Product>
+    <Company>dorothei</Company>
+    <Authors>Theodor Plenkow</Authors>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
