@@ -1,9 +1,14 @@
 # Calc
 Simple WPF calculator with keyboard input.
 
+- Four operations: `+`, `-`, `*`, `/`
+- Supports parentheses and exponentiation
+- Input via buttons or keyboard
+- Light and dark themes
+- Evaluated with AngouriMath
+
 ## How to use?
 Just input math problem from keyboard or buttons.
-
 
 <img src="/assets/calcscreenshot.png" width="30%">  <img src="/assets/calcscreenshotdark.png" width="30%"> <img src="/assets/calcscreenshottest.png" width="30%">
 
