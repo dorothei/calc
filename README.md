@@ -10,11 +10,11 @@ Simple WPF calculator with keyboard input.
 ## How to use?
 Just input math problem from keyboard or buttons.
 
-<img src="/assets/calcscreenshot.png" width="30%"> <img src="/assets/calcscreenshottest.png" width="30%">
 ## White Theme
+<img src="/assets/calcscreenshot.png" width="30%"> <img src="/assets/calcscreenshottest.png" width="30%">
 
-<img src="/assets/calcscreenshotdark.png" width="30%"> <img src="/assets/calcscreenshotdarktest.png" width="30%">
 ## Dark Theme
+<img src="/assets/calcscreenshotdark.png" width="30%"> <img src="/assets/calcscreenshotdarktest.png" width="30%">
 
 ## Requirements
 
