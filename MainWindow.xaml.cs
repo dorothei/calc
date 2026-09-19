@@ -3,11 +3,13 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using AngouriMath;
 using System.Globalization;
+using System.Windows.Media;
 
-namespace wpf;
+namespace calc;
 
 public partial class MainWindow : Window
 {
+    private bool IsDarkTheme = false;
     public MainWindow()
     {
         InitializeComponent();
@@ -58,6 +60,37 @@ public partial class MainWindow : Window
         if (!string.IsNullOrEmpty(TextBox.Text))
         {
             TextBox.Text = TextBox.Text.Remove(TextBox.Text.Length - 1);
+        }
+    }
+
+    public void ThemeButtonClick(object sender, EventArgs e)
+    {
+        var converter = new BrushConverter();
+
+        if (!IsDarkTheme)
+        {
+            Window.Background = (Brush)converter.ConvertFromString("#222222")!;
+            Resources["BtnBg"] = (Brush)converter.ConvertFromString("#2D2D2D")!;
+            Resources["BtnFg"] = (Brush)converter.ConvertFromString("#D1D1D1")!;
+            Resources["BtnHoverBg"] = (Brush)converter.ConvertFromString("#383838")!;
+            Resources["BtnHoverFg"] = (Brush)converter.ConvertFromString("#FFFFFF")!;
+            Resources["TxtBg"] = (Brush)converter.ConvertFromString("#1A1A1A")!;
+            Resources["TxtFg"] = (Brush)converter.ConvertFromString("#E0E0E0")!;
+            ThemeButton.Content = "🌙";
+            IsDarkTheme = true;
+        }
+        else
+        {
+            Window.Background = Brushes.White;
+
+            Resources["BtnBg"] = (Brush)converter.ConvertFromString("#FFDDDDDD")!;
+            Resources["BtnFg"] = Brushes.Black;
+            Resources["BtnHoverBg"] = (Brush)converter.ConvertFromString("#FFBEE6FD")!;
+            Resources["BtnHoverFg"] = Brushes.DarkBlue;
+            Resources["TxtBg"] = Brushes.White;
+            Resources["TxtFg"] = Brushes.Black;
+            ThemeButton.Content = "☀️";
+            IsDarkTheme = false;
         }
     }
 
